@@ -29,7 +29,7 @@ namespace Business.Concrete
             }
             else
             {
-                return new ErrorResult(Messages.PriceError);
+                return new ErrorResult(Messages.CarPriceError);
             }
         }
 
@@ -46,7 +46,7 @@ namespace Business.Concrete
 
         public IDataResult<Car> GetCarById(int carId)
         {
-            return new SuccessDataResult<Car>(_carDal.Get(c=>c.CarId==carId));
+            return new SuccessDataResult<Car>(_carDal.Get(c=>c.Id==carId));
         }
 
         public IDataResult<List<CarDetailDto>> GetCarDetails()

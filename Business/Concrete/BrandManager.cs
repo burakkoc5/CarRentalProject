@@ -22,7 +22,7 @@ namespace Business.Concrete
         {
             if (brand.BrandName.Length<2)
             {
-                return new ErrorResult(Messages.NameError);
+                return new ErrorResult(Messages.BrandNameError);
             }
             _brandDal.Add(brand);
             return new SuccessResult(Messages.BrandAdded);
@@ -42,7 +42,7 @@ namespace Business.Concrete
 
         public IDataResult<Brand> GetBrandById(int brandId)
         {
-            return new SuccessDataResult<Brand>(_brandDal.Get(b=>b.BrandId==brandId));
+            return new SuccessDataResult<Brand>(_brandDal.Get(b=>b.Id==brandId));
         }
 
         public IResult Update(Brand brand)

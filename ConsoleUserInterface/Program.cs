@@ -10,13 +10,11 @@ namespace ConsoleUserInterface
     {
         static void Main(string[] args)
         {
-            CarManagerTest();
+            //CarManagerTest();
 
+            RentalManagerTest();
 
-
-
-
-
+            
 
 
         }
@@ -28,8 +26,20 @@ namespace ConsoleUserInterface
             {
                 Console.WriteLine("{0} model, {1} {2} Günlük Ücret : {3} / Renk : {4}", car.ModelYear, car.BrandName, car.Description, car.DailyPrice, car.ColorName);
             }
-            carManager.Add(new Car { BrandId = 4, DailyPrice = 200, Description = "Auris", ColorId = 2, ModelYear = 2018 });
-            Console.WriteLine(carManager.GetCarById(5).Data.Description);
+            
+        }
+
+        private static void RentalManagerTest()
+        {
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            //Zaten var olan data eklenmeye çalışınca eklenemedi diyor.
+            Console.WriteLine(rentalManager.Add(new Rental { CarId = 4, CustomerId = 2, RentDate = DateTime.Now }).Message);
+            foreach (Rental rental in rentalManager.GetAll().Data)
+            {
+                Console.WriteLine(rental.Id);
+            }
+
+
         }
     }
 }
