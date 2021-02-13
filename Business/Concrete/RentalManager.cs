@@ -21,23 +21,14 @@ namespace Business.Concrete
         //KOntrol et
         public IResult Add(Rental rental)
         {
-            var rentalStatus = _rentalDal.Get(r => r.CarId == rental.CarId);
 
-            if (rentalStatus == null)
+            var returnStatus = _rentalDal.Get(r=>r.CarId == rental.CarId);
+            if (returnStatus != null && returnStatus.ReturnDate == null)
             {
-                _rentalDal.Add(rental);
-                return new SuccessResult(Messages.RentAdded);
-            }
-
-            if (rentalStatus.ReturnDate == new DateTime(0001,01,1))
-            {
-
-                return new ErrorResult("Eklenemedi");
-
+                return new ErrorResult("İstenilen araba kiralanmaya uygun durumda değil.");   
             }
             _rentalDal.Add(rental);
             return new SuccessResult(Messages.RentAdded);
-
 
         }
 

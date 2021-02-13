@@ -34,9 +34,10 @@ namespace ConsoleUserInterface
             RentalManager rentalManager = new RentalManager(new EfRentalDal());
             //Zaten var olan data eklenmeye çalışınca eklenemedi diyor.
             Console.WriteLine(rentalManager.Add(new Rental { CarId = 4, CustomerId = 2, RentDate = DateTime.Now }).Message);
+            
             foreach (Rental rental in rentalManager.GetAll().Data)
             {
-                Console.WriteLine(rental.Id);
+                Console.WriteLine(rental.RentDate);
             }
 
 
