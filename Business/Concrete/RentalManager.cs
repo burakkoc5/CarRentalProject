@@ -22,8 +22,8 @@ namespace Business.Concrete
         public IResult Add(Rental rental)
         {
 
-            var returnStatus = _rentalDal.Get(r=>r.CarId == rental.CarId);
-            if (returnStatus != null && returnStatus.ReturnDate == null)
+            var returnStatus = _rentalDal.Get(r=>r.CarId == rental.CarId && r.ReturnDate == null);
+            if (returnStatus != null )
             {
                 return new ErrorResult("İstenilen araba kiralanmaya uygun durumda değil.");   
             }
