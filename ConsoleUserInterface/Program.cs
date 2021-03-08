@@ -3,6 +3,7 @@ using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using Entities.DTOs;
 using System;
+using System.IO;
 
 namespace ConsoleUserInterface
 {
@@ -12,10 +13,7 @@ namespace ConsoleUserInterface
         {
             //CarManagerTest();
 
-            RentalManagerTest();
-
-            
-
+            //RentalManagerTest();
 
         }
 

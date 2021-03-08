@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Core.Entities.Concrete;
+using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Constants
@@ -39,6 +41,12 @@ namespace Business.Constants
         public static string UserDeleted = "Kullanıcı başarıyla silindi.";
         public static string UserUpdated = "Kullanıcı başarıyla güncellendi.";
         public static string UsersListed = "Kullanıcılar başarıyla listelendi.";
+        public static string AccessTokenCreated = "Access Token oluşturuldu.";
+        public static string UserAlreadyExists = "Kullanıcı zaten var.";
+        public static string UserRegistered = "Kullanıcı başarıyla kayıt oldu.";
+        public static string SuccessfulLogin = "Başarıyla giriş yapıldı.";
+        public static string PasswordError= "Hatalı şifre.";
+        public static string UserNotFound = "Giriş yapmaya çalıştığınız kullanıcı bulunamadı.";
 
         //Customer
         public static string CustomerAdded = "Müşteri başarıyla eklendi.";
@@ -46,6 +54,13 @@ namespace Business.Constants
         public static string CustomerUpdated = "Müşteri başarıyla güncellendi.";
         public static string CustomersListed = "Müşteriler başarıyla listelendi.";
 
-
+        //CarImage
+        public static string ImageLimitError = "Bir arabaya ait en fazla 5 olabilir.";
+        public static string CarImageUpdated = "Araba resmi başarıyla güncellendi.";
+        public static string CarImageDeleted = "Araba resmi başarıyla silindi.";
+        public static string InvalidExtension = "Eklenmeye çalışan dosya eklentisi uygun değil.";
+        public static string ImageDoesNotExist="Silmeye çalıştığınız resim mevcut değil.";
+        public static string NullField= "Lütfen bir fotoğraf seçiniz.";
+        public static string AuthorizationDenied = "Yetkiniz yok.";
     }
 }

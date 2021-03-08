@@ -5,7 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Images\23057875-36a7-4171-96c3-29a9bb9a3fb0.jpg" />
+    <Content Remove="wwwroot\Images\4311ccdb-5510-40bf-88b9-d87c4a6ad624.png" />
+    <Content Remove="wwwroot\Images\cf5fc9a5-4e95-4d2c-962b-e7446475e310.jpg" />
+    <Content Remove="wwwroot\Images\e7e1c8d6-1146-4293-98fb-f583350528a5.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
