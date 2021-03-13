@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -27,6 +28,7 @@ namespace Business.Concrete
             {
                 return new ErrorResult("İstenilen araba kiralanmaya uygun durumda değil.");   
             }
+            rental.RentDate = DateTime.Now;
             _rentalDal.Add(rental);
             return new SuccessResult(Messages.RentAdded);
 
@@ -46,6 +48,11 @@ namespace Business.Concrete
         public IDataResult<Rental> GetRentalById(int rentalId)
         {
             return new SuccessDataResult<Rental>(_rentalDal.Get(r=>r.Id==rentalId));
+        }
+
+        public IDataResult<List<RentalDetailDto>> GetRentalDetails()
+        {
+            return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetails());
         }
 
         public IResult Update(Rental rental)
